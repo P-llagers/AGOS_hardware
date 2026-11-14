@@ -15,7 +15,8 @@ summary, not evidence of field performance. Keep it current as the project evolv
   app that displays them on a mobile device.
 - Source inspection: `../platformio.ini`, `../include/hardware.h`,
   `../include/position_packet.h`, `../src/main.cpp`, `../src/agos_node.cpp`, and
-  `../tests/`; the sibling `../../agos_app` was empty before adding `AGENTS.md`.
+  `../tests/`; the sibling `../../agos_app` was initially empty and now has a
+  Flutter skeleton described below.
 
 The proposal expresses intended behavior. The code shows current implementation.
 Hardware performance requires separate measured evidence. Explicit later user
@@ -51,7 +52,7 @@ or elevated on a vessel, aircraft, or shore location. Each independent radio nod
 and gateway needs its own ESP32/radio assembly. Node A and Node B in the current
 bring-up are both GPS/LoRa peers; neither is a completed Master Gateway.
 
-## Proposed behavior - not yet implemented
+## Proposal baseline (implementation status is below)
 
 | Area | Proposal baseline | PDF pages |
 | --- | --- | --- |
@@ -107,7 +108,7 @@ documentation task.
 | Radio loop | Asynchronous TX, 3000 ms TX timeout, return to RX; GPS diagnostics still run after radio initialization failure. |
 | Reception | Prints peer payload, RSSI, and SNR; no structured validation of peer positions or authentication. |
 | Tests present | Host packet checks and production node-loop checks using mock serial/radio/SPI and the real TinyGPSPlus parser. Presence is not a claim these ran during this review. |
-| Gateway/app | `agos_app` had no scaffold, code, or dependencies at inspection. |
+| Gateway/app | Flutter Android/iOS skeleton with web preview now exists in `agos_app`: dashboard, validated ASCII packets, local settings/latest-snapshot database, configurable HTTP polling, demo isolation, mock gateway, and tests. Actual ESP32 gateway firmware and offline maps are not implemented. |
 
 Examples below are documentation/test data, not survivor locations:
 
@@ -127,6 +128,14 @@ The README still describes `lora_sender` as the default; the inspected
 `platformio.ini` instead selects `node_a`. Use the current configuration and
 preserve this pre-existing user change.
 
+The [app README](../../agos_app/README.md) documents setup and boundaries. The
+[gateway API contract](../../agos_app/docs/gateway_protocol.md) introduces
+`GET /api/v1/snapshot` as a new app-side implementation choice; it is not present
+in the sensor firmware or specified by the paper. Flutter uses ChangeNotifier,
+HTTP, and Sembast; Android/iOS are mobile targets and web is a development preview.
+The database keeps latest snapshots per gateway, not full incident history. No
+priority/battery values are invented. Demo data never enters the live cache.
+
 ## Hardware baseline and unresolved decisions
 
 The existing [wiring guide](AGOS_ESP32_LoRa_GPS_Wiring_Guide.md) is provisional
@@ -139,13 +148,17 @@ power schematic.
 
 Open implementation decisions include:
 
-- Gateway firmware and Flutter subfolder layout inside `agos_app`.
-- Local Wi-Fi API, message framing, discovery, reconnect, and history sync.
+- Implementing gateway firmware in a separate future `agos_app/gateway/` subproject;
+  the Flutter app is now at the `agos_app` root.
+- Implementing the documented HTTP snapshot API on ESP32; discovery, precise
+  time synchronization, and full history sync remain open.
 - Current ASCII protocol evolution versus a fully specified binary protocol.
 - Node identity across reboot, deduplication, TTL/ACK rules, and relay scheduling.
 - Priority thresholds, conflicting-state precedence, and telemetry timeouts.
 - microSD wiring/storage failure behavior, log schema, retention, and timestamps.
-- Flutter phone platforms, packages, local database, and offline tile packaging.
+- Real-device validation for Android/iOS, offline tile packaging/renderer, full
+  history storage, and release identity/signing. Initial app dependencies and
+  latest-snapshot storage are configured; see the app README.
 - Position source for distance/bearing (for example phone or gateway GPS).
 - Verified RF operating requirements and actual hardware/power specifications.
 

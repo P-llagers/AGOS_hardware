@@ -34,9 +34,11 @@ The user assigns sensor firmware to `thesis1` and gateway/app work to `agos_app`
 Gateway firmware and the Flutter app are separate programs even if kept together.
 
 Currently this repository contains PlatformIO/Arduino bring-up and bidirectional
-GPS/LoRa nodes. `agos_app` was empty before its guidance file was added. Mesh,
-ACKs, rescue classification, immersion/SOS inputs, battery sensing, gateway
-logging, Wi-Fi delivery, and the Flutter app are **not implemented here**.
+GPS/LoRa nodes. The sibling `agos_app` now contains a Flutter skeleton, HTTP client,
+local cache, and simulated gateway for development; read its README and guidance.
+Mesh, ACKs, rescue classification, immersion/SOS inputs, battery sensing, real
+gateway firmware/logging, and offline maps remain unimplemented. A working app
+preview or HTTP mock does not establish a working LoRa-to-phone integration.
 
 ## Files and build configuration
 
