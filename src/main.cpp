@@ -5,6 +5,10 @@
 #define AGOS_MODE 0
 #endif
 
+#if AGOS_MODE == 4
+#include "agos_node.h"
+#endif
+
 #if AGOS_MODE == 1 || AGOS_MODE == 2
 #include <SPI.h>
 #include <LoRa.h>
@@ -19,6 +23,9 @@ uint32_t lastStatus = 0;
 
 void setup()
 {
+#if AGOS_MODE == 4
+  setupNode();
+#else
   Serial.begin(115200);
   delay(1000);
   Serial.printf("\nAGOS hardware bring-up | mode=%d | chip=%s | flash=%u bytes\n",
@@ -53,11 +60,14 @@ void setup()
 #else
   Serial.println("USB check: heartbeat every 2 seconds. No peripherals required.");
 #endif
+#endif
 }
 
 void loop()
 {
-#if AGOS_MODE == 1
+#if AGOS_MODE == 4
+  loopNode();
+#elif AGOS_MODE == 1
   if (!radioReady)
   {
     delay(100);
