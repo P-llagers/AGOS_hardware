@@ -4,6 +4,79 @@ PlatformIO + Arduino starter for two classic ESP32 boards and two Ra-02
 SX1278 433 MHz radios, following the supplied wiring guide. One ESP32 and one
 radio are needed per node. GPS is optional during the radio test.
 
+## Bidirectional GPS nodes (current application)
+
+On Laptop 1, upload **Project Tasks > node_a > General > Upload**.
+On Laptop 2, upload **node_b**. Each environment runs the same application with
+a different node ID. Open **Monitor** at 115200 baud on each laptop. Explicitly
+choose the environment: the existing default remains `lora_sender` for compatibility.
+Both boards should print `PASS` and `LISTENING`.
+
+| Console input | Action on either laptop |
+|---|---|
+| `t` + Enter | Send one packet containing this node's current GPS/status |
+| `g` + Enter | Show local GPS status without transmitting |
+| `h` + Enter | Show commands |
+
+Both nodes continuously service the GPS and listen while idle. The radio returns
+to listening after each transmission. The local GPS/radio status prints every
+five seconds. Transmission is asynchronous so GPS parsing continues during TX.
+No packets are sent automatically. The radio is half-duplex: packets can be lost
+when both nodes send at once. Wait for the other node's transmission to finish
+before replying. There are no acknowledgements, retries, encryption or authentication
+in this prototype. Only a matching `RX` line on the peer confirms reception.
+Received payloads are displayed as sent by the peer; their coordinates are not
+independently verified by the receiving node.
+
+Example packet with a fix (illustrative coordinates only):
+
+```text
+AGOS,POS,v=1,node=A,seq=1,fix=VALID,age_ms=200,lat=14.599500,lon=120.984200,sat=8
+```
+
+Without a usable fix, radio testing still works and coordinates are omitted:
+
+```text
+AGOS,POS,v=1,node=B,seq=1,fix=NO_FIX,sat=NA
+```
+
+`VALID` requires a parsed location and active (`A`) GPRMC/GNRMC status, both no
+older than 5000 ms. A recent void (`V`) RMC status invalidates a cached position
+immediately. A previously active fix becomes `STALE` after the freshness limit;
+stale coordinates are omitted too. Satellite count is `NA` if unavailable or stale.
+Sequence numbers restart after reboot. The GPS must emit standard GPRMC or GNRMC
+sentences; this firmware does not reconfigure the GPS. The GPS wiring and verified
+power/logic requirements in section 5 apply to both nodes.
+
+### Verify communication and GPS
+
+1. Attach both antennas and use permitted RF test conditions. Confirm both nodes
+   show `PASS` and `LISTENING`.
+2. Type `t` on A. Confirm B shows `RX` with `node=A` and the same sequence number.
+3. Type `t` on B. Confirm A shows `RX` with `node=B`. Repeat in alternating turns.
+4. Take the GPS antennas to a clear sky view. Use `g` to distinguish UART bytes,
+   valid NMEA checksums, satellite count and `VALID` position. Initial fix may take time.
+5. Once each node has `VALID`, send again and confirm the peer receives its position.
+6. To check stale-data handling, power off before changing wiring, disconnect GPS
+   TX, then restart and test `NO_FIX`. For an already acquired fix, a software NMEA
+   replay/test harness can check `STALE` without moving powered wiring.
+
+In a PlatformIO terminal (replace COMx with the port on that laptop):
+
+```powershell
+# Laptop 1
+pio run -e node_a -t upload --upload-port COMx
+pio device monitor -p COMx -b 115200
+# Laptop 2
+pio run -e node_b -t upload --upload-port COMx
+pio device monitor -p COMx -b 115200
+```
+
+`gps_chars=0` means no serial bytes reached the parser. Bytes with zero
+`checksum_ok` indicate a wiring/baud/NMEA problem. Valid NMEA with `NO_FIX` usually
+means the GPS has not acquired position; check sky view and the RMC status message.
+If radio initialization fails, GPS diagnostics still run, but `t` cannot transmit.
+
 ## 1. Confirm the boards
 
 The provisional PlatformIO board is `esp32dev` (classic ESP32, typical 4 MB flash).
@@ -111,11 +184,35 @@ using coordinates in rescue packets. This diagnostic does not parse positions.
 
 ## Next integration milestone
 
-After both radios pass and the GPS breakout is confirmed, add GPS parsing,
-explicit fix validity and age, node IDs, sequence numbers and gateway logging.
+After bidirectional GPS packets pass, add gateway logging and delivery confirmation.
 Record missing packets and test conditions for thesis experiments. Mesh/ACK/TTL
 work comes after the basic link is measured. Do not use sample coordinates as
 real survivor locations.
 
 References: [PlatformIO ESP32 board](https://docs.platformio.org/en/stable/boards/espressif32/esp32dev.html),
-[LoRa library](https://github.com/sandeepmistry/arduino-LoRa).
+[LoRa library](https://github.com/sandeepmistry/arduino-LoRa),
+[TinyGPSPlus](https://github.com/mikalhart/TinyGPSPlus).
+
+## Host verification
+
+The fix/packet checks run without ESP32 hardware using a C++ compiler:
+
+```powershell
+g++ -std=c++11 -Wall -Wextra -pedantic -I include tests/test_position_packet.cpp -o .pio/test_position_packet.exe
+& .pio/test_position_packet.exe
+```
+
+These checks cover missing/void/stale fixes, coordinate ranges, timestamp freshness,
+packet limits and omission of unusable coordinates. Firmware builds verify the
+ESP32/library integration; radio delivery and live GPS acquisition require hardware.
+
+After building `node_a` to install TinyGPSPlus, also replay NMEA through the real
+parser and run the production node loop with simulated serial/radio hardware:
+
+```powershell
+g++ -std=c++11 -Wall -Wextra -pedantic -DARDUINO=10800 -DAGOS_MODE=4 -DAGOS_NODE_ID=65 -I tests/support -I include -I .pio/libdeps/node_a/TinyGPSPlus/src tests/test_node.cpp '.pio/libdeps/node_a/TinyGPSPlus/src/TinyGPS++.cpp' -o .pio/test_node.exe
+& .pio/test_node.exe
+```
+
+The replay checks GP/GN RMC sentences, bad checksums, fix loss, GPS parsing during
+TX, return to RX, TX timeout recovery and GPS operation after radio failure.
