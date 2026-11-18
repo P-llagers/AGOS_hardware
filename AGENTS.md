@@ -47,8 +47,14 @@ preview or HTTP mock does not establish a working LoRa-to-phone integration.
 - `src/main.cpp`: mode dispatch and USB/radio/raw-GPS diagnostics.
 - `src/agos_node.cpp`: mode 4 GPS parsing, serial commands, asynchronous TX, RX.
 - `include/position_packet.h`: position validity and ASCII packet formatting.
-- `include/hardware.h`: current GPIO, frequency, GPS UART constants.
+- `include/hardware.h`: current GPIO, GPS UART and the single shared set of LoRa
+  radio settings used by every LoRa mode.
+- `include/link_stats.h`: host-testable sequence/PDR accounting, statistics,
+  time-on-air and distance calculations, packet parsers, CSV quoting, console.
+- `include/test_log.h`: CSV test-log rows (HDR/CFG/NOTE/NOISE/SUM) and radio setup.
+- `tools/split_log.py`: splits saved monitor logs into one CSV per row type.
 - `tests/test_position_packet.cpp`: host checks for validity and packet limits.
+- `tests/test_link_stats.cpp`: host checks for `link_stats.h`.
 - `tests/test_node.cpp`, `tests/support/`: production-loop checks with simulated
   hardware and the real TinyGPSPlus parser.
 - `README.md`, `docs/AGOS_ESP32_LoRa_GPS_Wiring_Guide.md`: operating and wiring
@@ -84,6 +90,11 @@ defaults, or the user's existing edits incidentally.
   device warnings explicitly.
 - Coordinate packet changes with gateway/app consumers. Version deliberate
   protocol changes and document units, encoding, missing values, and compatibility.
+
+- Test logs (README **Thesis test logging**) are evidence. CSV rows hold hardware
+  readings, values calculated from them, configured settings (`CFG`) or operator
+  text (`NOTE`). Never write measurement values into logs or edit saved logs;
+  change columns only with a `LOG_SCHEMA` bump and matching `HDR` text.
 
 ## Hardware facts and limits
 

@@ -1,0 +1,792 @@
+17:39:17.335 > ets Jul 29 2019 12:21:46
+17:39:17.337 > 
+17:39:17.337 > rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+17:39:17.342 > configsip: 0, SPIWP:0xee
+17:39:17.345 > clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+17:39:17.351 > mode:DIO, clock div:2
+17:39:17.352 > load:0x3fff0030,len:1184
+17:39:17.355 > load:0x40078000,len:13232
+17:39:17.358 > load:0x40080400,len:3028
+17:39:17.360 > entry 0x400805e4
+17:39:18.521 > 
+17:39:18.523 > AGOS node A | bidirectional LoRa + GPS
+17:39:18.544 > PASS: Ra-02 initialized. LISTENING.
+17:39:18.552 > Radio: 433.000 MHz BW125 kHz SF7 CR4/5 preamble=8 sync=0x12 CRC=on TX=2 dBm (configured)
+17:39:18.555 > HDR,CFG,ms,session,schema,mode,role,node,radio_ok,freq_hz,bw_hz,sf,cr,preamble,sync_word,crc,tx_dbm_cfg,build
+17:39:18.565 > HDR,NOTE,ms,session,node,text
+17:39:18.568 > HDR,NOISE,ms,session,node,samples,rssi_min_dbm,rssi_mean_dbm,rssi_max_dbm
+17:39:18.574 > HDR,TX,ms,session,node,seq,fix,bytes,tx_ms,toa_calc_ms,result
+17:39:18.579 > HDR,RX,ms,session,src_node,seq,peer_fix,bytes,rssi_dbm,snr_db,ferr_hz,result,local_fix,local_lat,local_lon,peer_lat,peer_lon,dist_m,payload
+17:39:18.592 > HDR,SUM,ms,session,src_node,src_session,run,status,expected,expected_basis,received,lost,duplicates,out_of_order,out_of_range,pdr_pct,rssi_min_dbm,rssi_mean_dbm,rssi_max_dbm,rssi_sd_db,snr_min_db,snr_mean_db,snr_max_db,snr_sd_db,ferr_mean_hz,first_rx_ms,last_rx_ms
+17:39:18.614 > HDR,GPS,ms,session,node,utc_date,utc_time,fix,lat,lon,alt_m,hdop,sat,loc_age_ms,gps_chars,checksum_ok,checksum_bad
+17:39:18.624 > HDR,FIX,ms,session,node,from,to,sat,hdop
+17:39:18.628 > HDR,TTFF,ms,session,node,ttff_ms,sat,hdop
+17:39:18.632 > CFG,1123,C9C2,1,4,node,A,1,433000000,125000,7,4/5,8,0x12,1,2,Nov 18 2026 17:16:09
+17:39:18.638 > t: send GPS/status packet | g: local GPS status | h: help
+17:39:18.643 > Connect antennas and verify RF test conditions before sending. No automatic TX.
+17:39:22.505 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:22.516 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:27.506 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:27.515 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:31.538 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:31.549 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:31.860 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:31.870 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:32.174 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:32.185 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:32.503 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:32.512 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:32.519 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:32.528 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:32.778 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:32.788 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:32.928 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:32.939 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:33.262 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:33.272 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:33.783 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:33.792 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:33.816 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:33.826 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:33.851 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:33.860 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:33.881 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:33.890 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:33.910 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:33.920 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:33.952 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:33.961 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:33.974 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:33.984 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:34.006 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:34.015 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:34.041 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:34.052 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:34.070 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:34.081 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:34.104 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:34.115 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:34.133 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:34.142 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:34.170 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:34.181 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:34.198 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:34.209 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:34.230 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:34.239 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:34.265 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:34.274 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:34.295 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:34.304 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:34.327 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:34.338 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:34.360 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:34.369 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:34.389 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:34.400 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:34.425 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:34.434 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:34.451 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:34.461 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:34.484 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:34.494 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:34.518 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:34.528 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:34.547 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:34.557 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:34.579 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:34.590 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:37.513 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:37.528 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:42.513 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:42.524 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:47.513 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:47.524 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:47.976 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:47.986 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:48.148 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:48.158 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:48.573 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:48.583 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:48.874 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:48.883 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:49.168 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:49.178 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:49.418 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:49.427 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:49.722 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:49.731 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:50.001 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:50.011 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:50.282 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:50.291 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:50.512 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:50.522 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:50.784 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:50.794 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:50.995 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:51.005 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:51.473 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:51.482 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:51.654 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:51.664 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:51.849 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:51.858 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:52.017 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:52.029 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:52.202 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:52.212 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:52.365 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:52.375 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:52.514 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:52.523 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:52.543 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:52.552 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:52.722 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:52.732 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:52.917 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:52.927 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:53.123 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:53.134 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:53.314 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:53.324 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:53.490 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:53.500 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:53.669 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:53.679 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:53.852 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:53.863 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:54.043 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:54.054 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:54.334 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:54.345 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:54.533 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:54.544 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:54.752 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:54.762 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:54.960 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:54.971 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:55.166 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:55.175 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:55.362 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:55.371 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:55.576 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:55.587 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:55.810 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:55.820 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:56.008 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:56.017 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:56.203 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:56.213 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:56.412 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:56.423 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:56.602 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:56.613 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:56.784 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:56.794 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:56.973 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:56.983 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:57.156 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:57.167 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:57.344 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:57.354 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:57.513 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:57.524 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:57.532 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:57.543 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:57.713 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:57.722 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:57.890 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:57.900 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:58.061 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:58.071 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:58.251 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:58.261 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:58.441 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:58.451 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:58.626 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:58.636 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:58.810 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:58.820 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:59.019 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:59.030 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:59.218 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:59.229 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:59.456 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:59.466 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:59.660 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:59.671 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:39:59.882 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:39:59.891 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:00.099 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:00.109 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:00.315 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:00.325 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:00.525 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:00.535 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:00.719 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:00.728 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:00.918 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:00.929 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:01.105 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:01.115 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:01.291 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:01.301 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:01.466 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:01.476 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:01.664 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:01.674 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:01.863 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:01.872 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:02.048 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:02.058 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:02.237 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:02.246 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:02.427 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:02.437 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:02.514 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:02.524 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:02.613 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:02.623 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:02.811 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:02.822 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:02.996 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:03.006 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:03.197 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:03.207 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:03.416 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:03.426 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:03.632 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:03.643 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:04.147 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:04.157 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:04.180 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:04.189 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:04.212 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:04.222 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:04.240 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:04.250 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:04.273 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:04.283 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:04.307 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:04.317 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:04.335 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:04.344 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:04.365 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:04.374 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:04.398 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:04.408 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:04.433 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:04.443 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:04.462 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:04.473 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:04.491 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:04.502 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:04.522 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:04.532 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:04.553 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:04.562 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:04.584 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:04.593 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:04.613 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:04.624 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:04.647 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:04.656 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:04.674 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:04.684 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:04.706 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:04.715 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:04.736 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:04.747 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:04.773 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:04.783 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:04.810 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:04.820 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:04.833 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:04.843 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:04.865 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:04.874 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:04.892 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:04.902 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:05.578 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:05.587 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:06.094 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:06.105 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:06.125 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:06.134 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:06.162 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:06.172 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:06.190 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:06.200 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:06.225 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:06.234 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:06.257 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:06.268 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:07.513 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:07.523 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:12.515 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:12.524 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:17.514 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:17.524 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:22.513 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:22.523 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:27.514 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:27.524 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:32.514 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:32.523 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:37.514 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:37.524 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:42.514 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:42.524 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:47.514 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:47.524 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:52.514 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:52.524 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:40:57.514 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:40:57.524 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:41:02.514 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:41:02.524 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:41:07.514 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:41:07.524 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:41:12.514 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:41:12.524 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:41:17.513 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:41:17.525 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:41:22.514 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:41:22.525 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:41:27.514 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:41:27.525 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:41:32.515 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:41:32.525 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:41:37.514 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:41:37.525 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:41:42.515 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:41:42.526 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:41:47.515 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:41:47.524 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:41:52.515 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:41:52.524 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:41:57.514 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:41:57.525 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:42:02.514 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:42:02.525 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:42:07.515 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:42:07.525 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:42:12.514 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:42:12.524 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:42:17.515 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:42:17.524 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:42:22.515 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:42:22.525 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:42:27.515 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:42:27.524 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:42:32.514 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:42:32.525 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:42:37.514 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:42:37.525 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:42:42.515 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:42:42.524 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:42:47.515 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:42:47.524 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:42:52.515 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:42:52.524 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:42:57.514 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:42:57.524 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:43:02.515 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:43:02.524 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:43:07.514 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:43:07.525 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:43:51.355 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:43:51.373 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:43:51.373 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:43:51.373 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:43:51.373 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:43:51.373 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:43:51.373 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:43:51.373 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:43:51.373 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:43:51.373 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:43:51.373 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:43:51.373 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:43:51.373 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:43:51.373 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:43:51.373 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:43:51.373 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:43:52.515 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:43:52.526 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:05.304 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:05.422 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:05.422 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:05.422 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:05.422 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:05.422 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:05.422 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:05.422 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:05.422 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:05.422 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:05.422 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:05.422 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:05.422 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:05.422 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:05.422 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:05.422 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:05.422 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:05.422 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:05.422 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:05.422 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:05.422 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:05.422 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:05.422 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:05.422 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:05.422 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:05.422 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:05.422 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:05.422 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:07.515 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:07.525 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:10.566 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:10.576 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:10.722 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:10.731 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:10.899 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:10.909 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:11.783 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:11.794 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:12.178 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:12.188 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:12.515 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:12.525 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:12.687 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:12.697 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:16.290 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:16.300 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:16.452 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:16.462 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:16.615 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:16.625 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:17.516 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:17.525 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:18.793 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:18.803 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:19.078 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:19.088 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:19.370 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:19.381 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:19.635 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:19.646 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:19.846 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:19.856 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:20.096 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:20.106 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:20.291 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:20.301 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:20.491 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:20.501 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:20.695 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:20.705 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:20.902 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:20.912 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:21.083 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:21.093 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:21.258 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:21.267 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:21.433 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:21.442 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:21.593 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:21.603 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:21.772 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:21.780 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:21.929 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:21.940 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:22.088 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:22.098 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:22.273 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:22.283 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:22.446 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:22.456 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:22.515 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:22.525 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:22.629 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:22.639 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:22.804 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:22.813 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:22.972 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:22.982 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:23.166 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:23.177 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:23.336 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:23.346 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:23.513 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:23.523 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:23.696 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:23.706 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:23.901 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:23.911 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:24.093 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:24.102 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:24.289 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:24.299 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:24.768 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:24.778 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:25.105 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:25.116 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:25.300 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:25.309 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:25.669 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:25.679 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:25.865 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:25.875 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:26.047 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:26.056 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:26.237 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:26.247 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:26.432 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:26.442 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:26.653 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:26.663 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:26.903 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:26.914 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:27.105 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:27.115 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:27.290 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:27.299 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:27.488 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:27.498 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:27.515 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:27.525 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:27.647 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:27.657 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:27.815 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:27.825 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:28.012 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:28.022 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:28.191 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:28.201 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:28.380 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:28.390 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:28.549 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:28.559 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:28.735 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:28.745 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:28.913 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:28.924 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:29.091 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:29.100 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:29.285 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:29.295 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:29.480 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:29.489 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:29.660 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:29.670 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:29.839 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:29.849 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:30.012 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:30.021 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:30.207 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:30.218 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:30.389 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:30.400 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:30.584 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:30.594 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:30.771 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:30.781 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:30.948 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:30.958 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:31.144 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:31.153 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:31.330 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:31.340 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:31.530 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:31.539 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:31.714 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:31.723 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:31.902 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:31.912 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:32.515 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:32.525 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:34.110 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:34.121 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:34.331 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:34.341 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:34.560 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:34.570 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:34.815 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:34.827 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:35.034 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:35.044 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:35.236 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:35.246 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:35.436 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:35.446 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:35.592 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:35.602 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:35.795 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:35.805 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:36.239 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:36.249 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:36.393 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:36.403 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:36.575 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:36.585 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:36.759 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:36.769 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:36.928 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:36.938 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:37.112 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:37.122 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:37.233 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:37.244 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:37.403 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:37.414 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:37.515 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:37.525 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:37.574 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:37.584 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:37.743 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:37.752 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:37.887 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:37.897 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:38.050 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:38.060 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:38.224 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:38.234 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:38.395 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:38.405 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:38.558 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:38.568 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:38.743 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:38.753 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:38.963 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:38.973 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:39.151 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:39.161 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:39.329 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:39.340 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:39.519 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:39.529 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:39.708 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:39.718 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:39.891 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:39.901 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:40.065 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:40.076 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:40.261 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:40.271 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:40.435 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:40.445 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:40.634 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:40.644 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:40.828 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:40.840 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:41.030 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:41.040 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:41.247 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:41.257 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:41.583 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:41.592 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:41.775 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:41.786 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:41.951 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:41.961 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:42.515 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:42.526 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:47.515 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:47.525 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:52.515 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=0
+17:45:52.525 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:45:56.101 > RX #1 bytes=109 RSSI=-120 dBm SNR=-10.5 dB | ��5�����3�fs"]۔v�␌�"}"%�dL#␖
+17:45:56.126 > ␃�?��X�␖��y���h� �Q␅�␞��U��CuB}␇�X誱�����t�j��R��}��1␋�aw�.\�␌/�����A���JSt
+17:45:56.126 > RX,398604,C9C2,,,,109,-120,-10.50,2290,unknown,NO_FIX,,,,,,"\x9A\x0D\xDF5\xDE\xE5\xED\xE4\xEE3\x86fs""]\xDB\x94v\x87\x0C\x84""}""%\xE3dL#\x16\x0A\x03\xB7?\xB9\xA6X\x9C\x16\x9F\xB1y\xE4\xF7\xCBh\x80 \x9AQ\x05\xDD\x1E\xF1\xB7\xC2U\xEA\xE7CuB}\x07\xF4X\xE8\xAA\xB1\xE7\xFC\xBF\xD2\xD4t\xD0j\xDE\xCFR\xBC\xDC}\x92\xDF1\x0B\xB4aw\xA7.\\\xF1\x0C/\xC7\xDD\xEC\xD8\xEF\x9DA\xE8\xE9\xD0JSt"
+17:45:57.515 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=1
+17:45:57.525 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:46:02.515 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=1
+17:46:02.525 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:46:07.515 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=1
+17:46:07.525 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:46:12.515 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=1
+17:46:12.526 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:46:17.515 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=1
+17:46:17.525 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:46:22.515 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=1
+17:46:22.525 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:46:27.515 > LOCAL AGOS,POS,v=1,node=A,seq=0,fix=NO_FIX,sat=NA | gps_chars=0 checksum_ok=0 checksum_bad=0 | radio=LISTENING rx=1
+17:46:27.525 > GPS: no UART data; check power, GPS TX -> GPIO16 and baud.
+17:46:31.335 > TX started: node=A seq=1
+17:46:31.424 > TX complete: AGOS,POS,v=1,node=A,seq=1,fix=NO_FIX,sat=0
+17:46:31.428 > LISTENING (delivery requires peer RX output)
+17:46:31.432 > TX,433916,C9C2,A,1,NO_FIX,42,88,87.3,ok
+17:46:31.506 > TX started: node=A seq=2
+17:46:31.593 > TX complete: AGOS,POS,v=1,node=A,seq=2,fix=NO_FIX,sat=0
+17:46:31.599 > LISTENING (delivery requires peer RX output)
+17:46:31.603 > TX,434086,C9C2,A,2,NO_FIX,42,88,87.3,ok
+17:46:32.516 > LOCAL AGOS,POS,v=1,node=A,seq=2,fix=NO_FIX,sat=0 | gps_chars=1726 checksum_ok=47 checksum_bad=0 | radio=LISTENING rx=1
+17:46:34.281 > TX started: node=A seq=3
+17:46:34.368 > TX complete: AGOS,POS,v=1,node=A,seq=3,fix=NO_FIX,sat=0
+17:46:34.373 > LISTENING (delivery requires peer RX output)
+17:46:34.377 > TX,436861,C9C2,A,3,NO_FIX,42,88,87.3,ok
+17:46:37.515 > LOCAL AGOS,POS,v=1,node=A,seq=3,fix=NO_FIX,sat=0 | gps_chars=4296 checksum_ok=125 checksum_bad=0 | radio=LISTENING rx=1
+17:46:42.515 > LOCAL AGOS,POS,v=1,node=A,seq=3,fix=NO_FIX,sat=0 | gps_chars=6916 checksum_ok=193 checksum_bad=0 | radio=LISTENING rx=1
+17:46:47.516 > LOCAL AGOS,POS,v=1,node=A,seq=3,fix=NO_FIX,sat=0 | gps_chars=9820 checksum_ok=266 checksum_bad=0 | radio=LISTENING rx=1
+17:46:52.515 > LOCAL AGOS,POS,v=1,node=A,seq=3,fix=NO_FIX,sat=0 | gps_chars=12844 checksum_ok=341 checksum_bad=0 | radio=LISTENING rx=1
+17:46:54.184 > TX started: node=A seq=4
+17:46:54.272 > TX complete: AGOS,POS,v=1,node=A,seq=4,fix=NO_FIX,sat=0
+17:46:54.276 > LISTENING (delivery requires peer RX output)
+17:46:54.280 > TX,456764,C9C2,A,4,NO_FIX,42,88,87.3,ok
+17:46:57.515 > LOCAL AGOS,POS,v=1,node=A,seq=4,fix=NO_FIX,sat=0 | gps_chars=15718 checksum_ok=411 checksum_bad=0 | radio=LISTENING rx=1
+17:47:00.613 > FIX,463105,C9C2,A,NO_FIX,VALID,4,3.86
+17:47:00.616 > TTFF,463106,C9C2,A,463106,4,3.86
+17:47:02.516 > LOCAL AGOS,POS,v=1,node=A,seq=4,fix=VALID,age_ms=799,lat=10.295689,lon=123.880506,sat=4 | gps_chars=18895 checksum_ok=481 checksum_bad=0 | radio=LISTENING rx=1
+17:47:07.516 > LOCAL AGOS,POS,v=1,node=A,seq=4,fix=VALID,age_ms=789,lat=10.295646,lon=123.880536,sat=4 | gps_chars=22795 checksum_ok=560 checksum_bad=0 | radio=LISTENING rx=1
+17:47:08.464 > TX started: node=A seq=5
+17:47:08.608 > TX complete: AGOS,POS,v=1,node=A,seq=5,fix=VALID,age_ms=718,lat=10.295645,lon=123.880536,sat=6
+17:47:08.617 > LISTENING (delivery requires peer RX output)
+17:47:08.620 > TX,471111,C9C2,A,5,VALID,81,156,143.6,ok
+17:47:10.598 > FIX,473091,C9C2,A,VALID,NO_FIX,6,2.72
+17:47:12.515 > LOCAL AGOS,POS,v=1,node=A,seq=5,fix=NO_FIX,sat=6 | gps_chars=26613 checksum_ok=640 checksum_bad=0 | radio=LISTENING rx=1
+17:47:12.632 > FIX,475125,C9C2,A,NO_FIX,VALID,6,2.72
+17:47:17.516 > LOCAL AGOS,POS,v=1,node=A,seq=5,fix=VALID,age_ms=772,lat=10.295660,lon=123.880610,sat=10 | gps_chars=30765 checksum_ok=720 checksum_bad=0 | radio=LISTENING rx=1
+17:47:22.516 > LOCAL AGOS,POS,v=1,node=A,seq=5,fix=VALID,age_ms=789,lat=10.295674,lon=123.880633,sat=10 | gps_chars=34992 checksum_ok=800 checksum_bad=0 | radio=LISTENING rx=1
+17:47:27.516 > LOCAL AGOS,POS,v=1,node=A,seq=5,fix=VALID,age_ms=765,lat=10.295672,lon=123.880657,sat=11 | gps_chars=39270 checksum_ok=880 checksum_bad=0 | radio=LISTENING rx=1
+17:47:32.516 > LOCAL AGOS,POS,v=1,node=A,seq=5,fix=VALID,age_ms=765,lat=10.295680,lon=123.880663,sat=12 | gps_chars=43653 checksum_ok=960 checksum_bad=0 | radio=LISTENING rx=1
+17:47:37.516 > LOCAL AGOS,POS,v=1,node=A,seq=5,fix=VALID,age_ms=747,lat=10.295686,lon=123.880664,sat=12 | gps_chars=48155 checksum_ok=1042 checksum_bad=0 | radio=LISTENING rx=1
+17:47:42.516 > LOCAL AGOS,POS,v=1,node=A,seq=5,fix=VALID,age_ms=762,lat=10.295691,lon=123.880665,sat=12 | gps_chars=52805 checksum_ok=1128 checksum_bad=0 | radio=LISTENING rx=1
+17:47:47.516 > LOCAL AGOS,POS,v=1,node=A,seq=5,fix=VALID,age_ms=727,lat=10.295697,lon=123.880667,sat=12 | gps_chars=57521 checksum_ok=1212 checksum_bad=0 | radio=LISTENING rx=1
+17:47:52.517 > LOCAL AGOS,POS,v=1,node=A,seq=5,fix=VALID,age_ms=742,lat=10.295700,lon=123.880668,sat=12 | gps_chars=62300 checksum_ok=1297 checksum_bad=0 | radio=LISTENING rx=1
+17:47:55.352 > TX started: node=A seq=6
+17:47:55.497 > TX complete: AGOS,POS,v=1,node=A,seq=6,fix=VALID,age_ms=560,lat=10.295700,lon=123.880670,sat=12
+17:47:55.505 > LISTENING (delivery requires peer RX output)
+17:47:55.509 > TX,517999,C9C2,A,6,VALID,82,156,143.6,ok
+17:47:57.516 > LOCAL AGOS,POS,v=1,node=A,seq=6,fix=VALID,age_ms=725,lat=10.295701,lon=123.880670,sat=12 | gps_chars=67090 checksum_ok=1382 checksum_bad=0 | radio=LISTENING rx=1
+17:48:02.516 > LOCAL AGOS,POS,v=1,node=A,seq=6,fix=VALID,age_ms=722,lat=10.295701,lon=123.880670,sat=12 | gps_chars=71913 checksum_ok=1467 checksum_bad=0 | radio=LISTENING rx=1
+17:48:07.517 > LOCAL AGOS,POS,v=1,node=A,seq=6,fix=VALID,age_ms=663,lat=10.295684,lon=123.880678,sat=12 | gps_chars=76735 checksum_ok=1551 checksum_bad=0 | radio=LISTENING rx=1
+17:48:12.516 > LOCAL AGOS,POS,v=1,node=A,seq=6,fix=VALID,age_ms=549,lat=10.295646,lon=123.880698,sat=12 | gps_chars=81558 checksum_ok=1636 checksum_bad=0 | radio=LISTENING rx=1
+17:48:17.516 > LOCAL AGOS,POS,v=1,node=A,seq=6,fix=VALID,age_ms=426,lat=10.295645,lon=123.880701,sat=12 | gps_chars=86380 checksum_ok=1720 checksum_bad=0 | radio=LISTENING rx=1
+17:48:22.517 > LOCAL AGOS,POS,v=1,node=A,seq=6,fix=VALID,age_ms=328,lat=10.295643,lon=123.880701,sat=12 | gps_chars=91203 checksum_ok=1808 checksum_bad=0 | radio=LISTENING rx=1
+17:48:27.516 > LOCAL AGOS,POS,v=1,node=A,seq=6,fix=VALID,age_ms=193,lat=10.295641,lon=123.880702,sat=12 | gps_chars=96025 checksum_ok=1896 checksum_bad=0 | radio=LISTENING rx=1
+17:48:32.516 > LOCAL AGOS,POS,v=1,node=A,seq=6,fix=VALID,age_ms=69,lat=10.295639,lon=123.880705,sat=12 | gps_chars=100848 checksum_ok=1985 checksum_bad=0 | radio=LISTENING rx=1
+17:48:37.516 > LOCAL AGOS,POS,v=1,node=A,seq=6,fix=VALID,age_ms=906,lat=10.295638,lon=123.880708,sat=12 | gps_chars=105670 checksum_ok=2076 checksum_bad=0 | radio=LISTENING rx=1
+17:48:42.516 > LOCAL AGOS,POS,v=1,node=A,seq=6,fix=VALID,age_ms=826,lat=10.295639,lon=123.880718,sat=12 | gps_chars=110493 checksum_ok=2165 checksum_bad=0 | radio=LISTENING rx=1
+17:48:47.516 > LOCAL AGOS,POS,v=1,node=A,seq=6,fix=VALID,age_ms=762,lat=10.295639,lon=123.880723,sat=12 | gps_chars=115316 checksum_ok=2254 checksum_bad=0 | radio=LISTENING rx=1
+17:48:52.516 > LOCAL AGOS,POS,v=1,node=A,seq=6,fix=VALID,age_ms=697,lat=10.295639,lon=123.880727,sat=12 | gps_chars=120138 checksum_ok=2343 checksum_bad=0 | radio=LISTENING rx=1
+17:48:57.516 > LOCAL AGOS,POS,v=1,node=A,seq=6,fix=VALID,age_ms=632,lat=10.295638,lon=123.880730,sat=12 | gps_chars=124961 checksum_ok=2432 checksum_bad=0 | radio=LISTENING rx=1
+17:49:02.516 > LOCAL AGOS,POS,v=1,node=A,seq=6,fix=VALID,age_ms=565,lat=10.295635,lon=123.880732,sat=12 | gps_chars=129783 checksum_ok=2521 checksum_bad=0 | radio=LISTENING rx=1
+17:49:07.517 > LOCAL AGOS,POS,v=1,node=A,seq=6,fix=VALID,age_ms=509,lat=10.295634,lon=123.880733,sat=12 | gps_chars=134606 checksum_ok=2608 checksum_bad=0 | radio=LISTENING rx=1
+17:49:12.517 > LOCAL AGOS,POS,v=1,node=A,seq=6,fix=VALID,age_ms=527,lat=10.295633,lon=123.880732,sat=12 | gps_chars=139428 checksum_ok=2694 checksum_bad=0 | radio=LISTENING rx=1
+17:49:17.517 > LOCAL AGOS,POS,v=1,node=A,seq=6,fix=VALID,age_ms=452,lat=10.295632,lon=123.880732,sat=12 | gps_chars=144251 checksum_ok=2782 checksum_bad=0 | radio=LISTENING rx=1
+17:49:22.517 > LOCAL AGOS,POS,v=1,node=A,seq=6,fix=VALID,age_ms=377,lat=10.295631,lon=123.880731,sat=12 | gps_chars=149073 checksum_ok=2871 checksum_bad=0 | radio=LISTENING rx=1
+17:49:27.516 > LOCAL AGOS,POS,v=1,node=A,seq=6,fix=VALID,age_ms=302,lat=10.295629,lon=123.880730,sat=12 | gps_chars=153896 checksum_ok=2960 checksum_bad=0 | radio=LISTENING rx=1
+17:49:32.517 > LOCAL AGOS,POS,v=1,node=A,seq=6,fix=VALID,age_ms=227,lat=10.295627,lon=123.880729,sat=12 | gps_chars=158719 checksum_ok=3049 checksum_bad=0 | radio=LISTENING rx=1
+17:49:37.517 > LOCAL AGOS,POS,v=1,node=A,seq=6,fix=VALID,age_ms=151,lat=10.295627,lon=123.880728,sat=12 | gps_chars=163541 checksum_ok=3137 checksum_bad=0 | radio=LISTENING rx=1
+17:49:42.517 > LOCAL AGOS,POS,v=1,node=A,seq=6,fix=VALID,age_ms=76,lat=10.295626,lon=123.880728,sat=12 | gps_chars=168364 checksum_ok=3226 checksum_bad=0 | radio=LISTENING rx=1
+17:49:47.517 > LOCAL AGOS,POS,v=1,node=A,seq=6,fix=VALID,age_ms=1,lat=10.295625,lon=123.880727,sat=12 | gps_chars=173186 checksum_ok=3315 checksum_bad=0 | radio=LISTENING rx=1
+17:49:52.517 > LOCAL AGOS,POS,v=1,node=A,seq=6,fix=VALID,age_ms=33,lat=10.295624,lon=123.880726,sat=12 | gps_chars=178009 checksum_ok=3403 checksum_bad=0 | radio=LISTENING rx=1
+17:49:57.517 > LOCAL AGOS,POS,v=1,node=A,seq=6,fix=VALID,age_ms=3,lat=10.295624,lon=123.880726,sat=12 | gps_chars=182831 checksum_ok=3490 checksum_bad=0 | radio=LISTENING rx=1
+17:50:02.516 > LOCAL AGOS,POS,v=1,node=A,seq=6,fix=VALID,age_ms=11,lat=10.295623,lon=123.880725,sat=12 | gps_chars=187654 checksum_ok=3575 checksum_bad=0 | radio=LISTENING rx=1
+17:50:07.517 > LOCAL AGOS,POS,v=1,node=A,seq=6,fix=VALID,age_ms=19,lat=10.295621,lon=123.880725,sat=12 | gps_chars=192476 checksum_ok=3660 checksum_bad=0 | radio=LISTENING rx=1
+17:50:12.518 > LOCAL AGOS,POS,v=1,node=A,seq=6,fix=VALID,age_ms=894,lat=10.295618,lon=123.880724,sat=12 | gps_chars=197299 checksum_ok=3746 checksum_bad=0 | radio=LISTENING rx=1
+17:50:17.517 > LOCAL AGOS,POS,v=1,node=A,seq=6,fix=VALID,age_ms=808,lat=10.295615,lon=123.880723,sat=12 | gps_chars=202121 checksum_ok=3835 checksum_bad=0 | radio=LISTENING rx=1
+17:50:22.517 > LOCAL AGOS,POS,v=1,node=A,seq=6,fix=VALID,age_ms=723,lat=10.295613,lon=123.880723,sat=12 | gps_chars=206944 checksum_ok=3923 checksum_bad=0 | radio=LISTENING rx=1
+17:50:27.518 > LOCAL AGOS,POS,v=1,node=A,seq=6,fix=VALID,age_ms=592,lat=10.295613,lon=123.880725,sat=12 | gps_chars=211767 checksum_ok=4011 checksum_bad=0 | radio=LISTENING rx=1
+17:50:32.517 > LOCAL AGOS,POS,v=1,node=A,seq=6,fix=VALID,age_ms=482,lat=10.295613,lon=123.880725,sat=12 | gps_chars=216589 checksum_ok=4094 checksum_bad=0 | radio=LISTENING rx=1
+17:50:37.517 > LOCAL AGOS,POS,v=1,node=A,seq=6,fix=VALID,age_ms=448,lat=10.295613,lon=123.880725,sat=12 | gps_chars=221412 checksum_ok=4176 checksum_bad=0 | radio=LISTENING rx=1
+17:50:42.517 > LOCAL AGOS,POS,v=1,node=A,seq=6,fix=VALID,age_ms=297,lat=10.295613,lon=123.880726,sat=12 | gps_chars=226234 checksum_ok=4260 checksum_bad=0 | radio=LISTENING rx=1

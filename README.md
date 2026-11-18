@@ -77,6 +77,113 @@ pio device monitor -p COMx -b 115200
 means the GPS has not acquired position; check sky view and the RMC status message.
 If radio initialization fails, GPS diagnostics still run, but `t` cannot transmit.
 
+## Thesis test logging (LoRa range and GPS)
+
+Every LoRa build (`lora_receiver`, `lora_sender`, `node_a`, `node_b`) prints
+machine-readable CSV rows next to its normal messages. The first field is the
+row type; each board prints `HDR,<type>,<columns>` lines at boot and on `c`, so a
+saved log names its own columns. Empty fields mean "not available", never zero.
+
+**Saving logs.** `platformio.ini` sets `monitor_filters = default, time, log2file`
+and `monitor_echo = yes`. Every `pio device monitor` session is saved to
+`logs/device-monitor-YYMMDD-HHMMSS.log`, each line prefixed with PC time
+(`HH:MM:SS.mmm > `). The date is in the file name. Keep these files unedited as
+the raw evidence. To get one spreadsheet-ready CSV per row type:
+
+```powershell
+python tools/split_log.py logs/device-monitor-261118-101500.log -o logs/csv
+```
+
+The script copies values exactly as logged and adds `log_file`, `pc_date` and
+`pc_time` columns. Rows it cannot match to a header go to `*_UNMATCHED.csv`.
+
+**Radio settings** live in one place, `include/hardware.h`, and are used by every
+LoRa mode, so both boards always match when built from the same source. They
+appear in each `CFG` row (frequency, bandwidth, SF, coding rate, preamble, sync
+word, CRC, configured TX power, build time). `session` is a random ID chosen at
+boot; it shows when a board restarted in the middle of a log.
+
+### Commands
+
+| Board | Key | Action |
+|---|---|---|
+| all LoRa builds | `c` | Print headers and the `CFG` row again |
+| all LoRa builds | `m <text>` Enter | Log a `NOTE`, e.g. `m dist=200m h_tx=1.5m h_rx=1.5m LOS sea=calm` |
+| all LoRa builds | `f` | 50 RSSI samples over 0.5 s -> `NOISE` (run while the other board is NOT sending) |
+| all LoRa builds | `h` | Help |
+| `lora_sender` | `t` | One manual packet (unchanged) |
+| `lora_sender` | `b` / `x` | Start / stop a numbered burst |
+| `lora_sender` | `n <count>` Enter, `i <ms>` Enter | Burst size (1-1000, default 100), interval (200-60000 ms, default 1000) |
+| `lora_receiver` | `s` / `r` | Summary of the current run / reset counters (prints a final summary first) |
+| `node_a`, `node_b` | `t`, `g` | Unchanged |
+| `node_a`, `node_b` | `l` | GPS log on/off: one `GPS` row per second |
+| `node_a`, `node_b` | `s` / `r` | Per-peer summary / reset |
+
+### Row types
+
+| Row | Printed by | Meaning |
+|---|---|---|
+| `CFG` | all | Configured settings (not measurements) |
+| `NOTE` | all | Operator-typed text, quoted. Not a measurement |
+| `NOISE` | all | Min/mean/max RSSI register while idle (channel noise/interference) |
+| `TX` | sender, nodes | One transmission: `bytes`, measured `tx_ms`, calculated `toa_calc_ms`, `result` |
+| `RUN` | sender | Burst `start` / `done` / `stopped`, with packets sent, failed TX and interval |
+| `RX` | receiver, nodes | One received packet: RSSI, SNR, frequency error `ferr_hz`, `result`, raw payload |
+| `SUM` | receiver, nodes | Run statistics: received/expected, lost, duplicates, out of order, PDR, RSSI/SNR min/mean/max/SD |
+| `GPS` | nodes (`l`) | GPS UTC date/time, fix state, lat/lon (VALID only), altitude, HDOP, satellites, fix age |
+| `FIX` | nodes | Fix state changes (e.g. `NO_FIX` -> `VALID`) |
+| `TTFF` | nodes | First VALID fix since ESP32 boot, in ms |
+
+`RX.result`: `new`, `dup` (same sequence again; not counted twice), `ooo` (older
+than one already received), `range` (outside the run), `single` (a manual `t`
+packet; logged but not scored), `unknown` (not an AGOS test packet).
+
+**How PDR is computed.** Burst packets look like
+`AGOS,TEST,node=A,ses=1A2B,run=001,seq=0001,of=0100` (fixed length, so every
+packet has the same airtime). The receiver takes the expected count from `of`
+(`expected_basis=declared`), so packets lost at the start or end of a run count
+as lost. A new run or sender session closes the previous run's `SUM`. In
+`node_a`/`node_b` packets carry no total; there the expected count is the span of
+sequence numbers heard (`expected_basis=seq_span`), which cannot see losses before
+the first or after the last received packet. Compare it with the sender's `TX`
+rows. Lost packets include packets rejected by the CRC check; the LoRa library
+does not report CRC failures separately. Failed transmissions (`TX.result=fail`,
+`RUN.tx_failed`) never left the sender, so report or exclude them separately.
+
+**Measured vs calculated.** `rssi_dbm`, `snr_db`, `ferr_hz`, noise, `tx_ms` and
+GPS fields are read from the hardware. `toa_calc_ms` (Semtech time-on-air
+formula), `pdr_pct`, statistics and `dist_m` are calculated from them. `dist_m`
+uses the receiving node's fix and the position the peer *claims* in its packet,
+so its accuracy is limited by both GPS fixes. `tx_ms` in the sender includes
+driver overhead; in `node_a`/`node_b` it is limited by loop timing.
+
+### Suggested LoRa range procedure
+
+1. Flash `lora_receiver` on B and `lora_sender` on A from the same commit. Check
+   that both `CFG` rows show identical radio fields.
+2. Bench check first: boards ~2 m apart, `b`, wait for `RUN ... done`, then `s`
+   on the receiver. Expect about `received=100` before trusting field data.
+3. At each distance: on both boards `m dist=<m> h_tx=<m> h_rx=<m> los=<yes/no>
+   sea=<state> place=<name>`; on B `f` with A idle; on A `b`; when A shows
+   `RUN ... done`, type `s` on B. The `SUM` row is that distance's result.
+4. Measure distance independently (surveyed points, GPS of both ends, or a map)
+   and record how in a `NOTE`. Repeat runs per distance if time allows.
+
+### Suggested GPS procedure
+
+1. Power-cycle the node and GPS together, note the start type and sky view
+   (`m start=cold sky=open place=<name>`). The `TTFF` row gives the time to first fix.
+2. Place the antenna on a surveyed or known reference point, type `l`, and log
+   for a fixed period (e.g. 10-30 min). `GPS` rows give the sample series for
+   error statistics (e.g. CEP/2DRMS) against the reference.
+3. `utc_time` shows which receiver epoch each row came from: rows are sampled each
+   second by the ESP32, not synchronized to the receiver, so remove repeated
+   `utc_time` values before computing statistics.
+
+The Arduino sketches in `agos_project/firmware` use other radio settings (SF9,
+sync word 0xA5) and do not log in this format. Use the PlatformIO builds above as
+the source of thesis range and GPS data, so all results come from one setup.
+
 ## 1. Confirm the boards
 
 The provisional PlatformIO board is `esp32dev` (classic ESP32, typical 4 MB flash).
@@ -215,4 +322,13 @@ g++ -std=c++11 -Wall -Wextra -pedantic -DARDUINO=10800 -DAGOS_MODE=4 -DAGOS_NODE
 ```
 
 The replay checks GP/GN RMC sentences, bad checksums, fix loss, GPS parsing during
-TX, return to RX, TX timeout recovery and GPS operation after radio failure.
+TX, return to RX, TX timeout recovery and GPS operation after radio failure,
+plus the CSV rows (CFG, TX, RX, SUM, GPS, FIX, TTFF, NOTE, NOISE).
+
+The link-test accounting (sequence tracking, PDR, statistics, time on air,
+distance, packet parsers, CSV quoting, console input) has its own check:
+
+```powershell
+g++ -std=c++11 -Wall -Wextra -pedantic -I include tests/test_link_stats.cpp -o .pio/test_link_stats.exe
+& .pio/test_link_stats.exe
+```

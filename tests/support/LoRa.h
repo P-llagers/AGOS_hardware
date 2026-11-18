@@ -14,6 +14,8 @@ struct FakeLoRa {
   void setCodingRate4(int) {}
   void setSyncWord(int) {}
   void enableCrc() {}
+  void disableCrc() {}
+  void setPreambleLength(long) {}
   void setTxPower(int) {}
   void onTxDone(void (*callback)()) { done = callback; }
   void receive() { listening = true; busy = false; }
@@ -29,5 +31,7 @@ struct FakeLoRa {
   int read() { unsigned char c = incoming.front(); incoming.erase(0, 1); return c; }
   int packetRssi() { return -55; }
   float packetSnr() { return 9.5f; }
+  long packetFrequencyError() { return -1200; }
+  int rssi() { return -120; }
 };
 extern FakeLoRa LoRa;

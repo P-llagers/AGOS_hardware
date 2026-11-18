@@ -107,6 +107,7 @@ documentation task.
 | GPS validity | Active GPRMC/GNRMC RMC status and location, both at most 5000 ms old; finite latitude/longitude within bounds. `NO_FIX`/`STALE` omit coordinates. |
 | Radio loop | Asynchronous TX, 3000 ms TX timeout, return to RX; GPS diagnostics still run after radio initialization failure. |
 | Reception | Prints peer payload, RSSI, and SNR; no structured validation of peer positions or authentication. |
+| Test logging | CSV rows with self-describing `HDR` lines: `CFG` settings, `TX`, `RX` (RSSI/SNR/frequency error), per-run `SUM` (PDR from declared burst size, loss, duplicates, RSSI/SNR spread), `NOISE`, operator `NOTE`, and in mode 4 `GPS`/`FIX`/`TTFF`. `lora_sender` adds numbered bursts (`b`). Saved via PlatformIO `log2file`; `tools/split_log.py` splits logs. Added 2026-11-18; not yet run on hardware. |
 | Tests present | Host packet checks and production node-loop checks using mock serial/radio/SPI and the real TinyGPSPlus parser. Presence is not a claim these ran during this review. |
 | Gateway/app | Flutter Android/iOS skeleton with web preview now exists in `agos_app`: dashboard, validated ASCII packets, local settings/latest-snapshot database, configurable HTTP polling, demo isolation, mock gateway, and tests. Actual ESP32 gateway firmware and offline maps are not implemented. |
 

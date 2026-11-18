@@ -16,6 +16,7 @@ typedef uint8_t byte;
 extern uint32_t testMillis;
 inline uint32_t millis() { return testMillis; }
 inline void delay(uint32_t ms) { testMillis += ms; }
+inline uint32_t esp_random() { return 0xBEEF; }
 inline double radians(double d) { return d * TWO_PI / 360.0; }
 inline double degrees(double r) { return r * 360.0 / TWO_PI; }
 inline double sq(double x) { return x * x; }
